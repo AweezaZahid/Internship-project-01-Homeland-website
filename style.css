@@ -847,7 +847,7 @@ h1{
     font-size: 1.2rem;
     color: #000;
 }
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
     .properties {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1615,60 +1615,70 @@ label{
     margin-top: 0;
     margin-bottom: 0.5rem;
 }
-@media (max-width: 1024px) {
-    .property-info {
-        grid-template-columns: 1fr; 
-    }
+/* ====== Responsive for 992px ====== */
+@media (max-width: 992px) {
+  .property-info {
+    grid-template-columns: 1fr; /* Stack on smaller screens */
+    gap: 30px;
+  }
 
-    .property-body {
-        padding: 30px;
-    }
+  .price-info {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
 
-    .gallery-images {
-        grid-template-columns: repeat(3, 1fr); 
-    }
+  .gallery-images {
+    grid-template-columns: repeat(3, 1fr); /* Reduce gallery columns */
+    gap: 15px;
+  }
 
-    .price-info .price strong {
-        font-size: 2rem;
-    }
-
-    .home-info {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
+  .home-info {
+    flex: 0 0 50%;
+    max-width: 50%; /* Two per row */
+  }
 }
 
+/* ====== Responsive for 768px ====== */
 @media (max-width: 768px) {
-    .property-information {
-        padding: 2em 1em;
-    }
+  .property-info {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
 
-    .property-body,
-    .contact-agent,
-    .paragraph {
-        padding: 20px;
-    }
-    .gallery-images {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-    .home-info {
-        flex: 0 0 100%;
-        max-width: 100%;
-        border-top: 1px solid #dee2e6 !important;
-        border-bottom: 1px solid #dee2e6 !important;
-    }
-    .price-info {
-        flex-direction: column;
-    }
-    .price-info .price,
-    .price-info .list {
-        max-width: 100%;
-    }
-    .property-info h2 {
-        font-size: 1.3rem;
-    }
+  .price-info {
+    grid-template-columns: 1fr; /* Stack price + specs */
+    text-align: center;
+  }
+
+  .price-info .property-specs-wrap {
+    float: none !important;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .home-info {
+    flex: 0 0 100%;
+    max-width: 100%; /* Each info full width */
+    border-top: 1px solid #dee2e6 !important;
+    border-bottom: none;
+  }
+
+  .gallery-images {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+    gap: 10px;
+  }
+
+  .property-body,
+  .contact-agent,
+  .paragraph {
+    padding: 20px; /* Reduce padding */
+  }
+
+  .property-info h2 {
+    font-size: 1.25rem;
+  }
 }
+
 
 /*View List Page*/
 .view-list_properties{
